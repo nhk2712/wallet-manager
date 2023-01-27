@@ -1,7 +1,4 @@
-const express = require("express");
-const App = express();
 const PORT = 8080;
-
-App.get('/',(req,res)=>{res.send("Hello World!")});
+const App = require("./api/index");
 
 App.listen(PORT,()=>{console.log(`App listening on port ${PORT}`)});
