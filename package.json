@@ -4,7 +4,8 @@
   "description": "An application to manage your wallet money amount.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "node ./api/index.js"
   },
   "repository": {
     "type": "git",
