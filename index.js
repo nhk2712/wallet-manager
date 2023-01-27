@@ -4,4 +4,5 @@ const PORT = 8080;
 
 App.get('/',(req,res)=>{res.send("Hello World!")});
 
-App.listen(PORT,()=>{console.log(`App listening on port ${PORT}`)});
+//App.listen(PORT,()=>{console.log(`App listening on port ${PORT}`)});
+module.exports = App;
