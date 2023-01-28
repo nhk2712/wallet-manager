@@ -2,6 +2,7 @@ const UserInfo = require("./controllers/User/UserInfo");
 const Update = require("./controllers/Wallet/Update");
 const SignUpModel = require("./models/User/SignUpModel");
 const CheckIfUsernameExist = require("./models/User/CheckIfUsernameExist");
+const SignInModel = require("./models/User/SignInModel")
 
 function AppRoute(app) {
     app.route('/')
@@ -33,9 +34,17 @@ function AppRoute(app) {
         })
 
     app.route('/user/checkusername/:username')
-    .get(async function(req,res){
-        res.send(await CheckIfUsernameExist(req.params.username))
-    })
+        .get(async function (req, res) {
+            res.send(await CheckIfUsernameExist(req.params.username))
+        })
+
+    app.route('/user/signin/:username/:hashedPassword')
+        .get(async function (req, res) {
+            const username = req.params.username;
+            const hashedPassword = req.params.hashedPassword;
+
+            res.send(await SignInModel(username, hashedPassword))
+        })
 }
 
 module.exports = AppRoute;
