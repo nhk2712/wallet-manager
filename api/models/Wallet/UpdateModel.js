@@ -1,3 +1,4 @@
+const Update = require("../../controllers/Wallet/Update");
 const Client = require("../mongodb")
 
 async function UpdateModel(userId, type, deltaAmount, title, description) {
@@ -25,7 +26,7 @@ async function UpdateModel(userId, type, deltaAmount, title, description) {
 
         async function genUpdateId() {
             var updateId = (Math.round(Math.random() * 90000000) + 10000000).toString();
-            var checkIfIdExist = await UserCollection.count({ _id: updateId });
+            var checkIfIdExist = await UpdateCollection.count({ _id: updateId });
             if (checkIfIdExist) genUpdateId();
             return updateId;
         }
