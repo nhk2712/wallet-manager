@@ -14,7 +14,7 @@ async function UpdateModel(userId, type, deltaAmount, title, description) {
             if (amount >= deltaAmountNum) amount -= deltaAmountNum;
             else {
                 await Client.close();
-                return { msg: "Error", description: "Money not enough" }
+                return { msg: "Error", description: "Money not enough", result: amount }
             };
         }
 
@@ -34,7 +34,7 @@ async function UpdateModel(userId, type, deltaAmount, title, description) {
         await UpdateCollection.insertOne({ _id: updateId, user: userId, type: type, deltaAmount: deltaAmountNum, title: title, description: description });
 
         await Client.close();
-        return { msg: "Success", description: "Updated successfully" }
+        return { msg: "Success", description: "Updated successfully", result:amount }
     }
     catch (err) {
         console.error(err)

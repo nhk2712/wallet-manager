@@ -1,0 +1,26 @@
+{
+    "_id":{
+        "type":"String",
+        "description":"ID of the update."
+    },
+    "user":{
+        "type":"String",
+        "description":"ID of the user updating."
+    },
+    "type":{
+        "type":"String",
+        "description":"Update add or omit?"
+    },
+    "deltaAmount":{
+        "type":"Number",
+        "description":"The updating amount"
+    },
+    "title":{
+        "type":"String",
+        "description":"Title of the update"
+    },
+    "description":{
+        "type":"String",
+        "description":"Description of the update"
+    }
+}

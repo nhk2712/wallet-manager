@@ -1,0 +1,26 @@
+{
+    "_id":{
+        "type":"String",
+        "description":"The ID of an user."
+    },
+    "name":{
+        "type":"String",
+        "description":"The name of an user."
+    },
+    "username":{
+        "type":"String",
+        "description":"Username, used for login."
+    },
+    "hashedPassword":{
+        "type":"String",
+        "description":"Hashed password for login."
+    },
+    "amount":{
+        "type":"Number",
+        "description":"The amount of money in the wallet."
+    },
+    "unit":{
+        "type":"Number",
+        "description":"Currency unit."
+    }
+}
