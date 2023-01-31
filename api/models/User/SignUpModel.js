@@ -24,7 +24,7 @@ async function SignUpModel(username, hashedPassword, name, initialAmount, unit) 
         await UserCollection.insertOne(newUser);
         await Client.close();
 
-        return {msg:"Success",description:"Signed up successfully"}
+        return { msg: "Success", description: "Signed up successfully", result: newUser }
     }
     catch (err) {
         console.error(err);
